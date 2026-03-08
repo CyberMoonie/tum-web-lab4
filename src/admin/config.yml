@@ -1,0 +1,80 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: CyberMoonie/tum-web-lab4
+  branch: main
+
+media_folder: "src/images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "site"
+        label: "Site Metadata"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Site Name", name: "name", widget: "string" }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "CTA Button Text", name: "cta", widget: "string" }
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Intro Text", name: "intro", widget: "text" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Brand Name", name: "brand", widget: "string" }
+              - { label: "Copyright Text", name: "copy", widget: "string" }
+          - label: "Social Links"
+            name: "socials"
+            widget: "object"
+            fields:
+              - { label: "Instagram URL", name: "instagram", widget: "string" }
+              - { label: "Facebook URL", name: "facebook", widget: "string" }
+              - { label: "TikTok URL", name: "tiktok", widget: "string" }
+
+      - name: "services"
+        label: "Services"
+        file: "src/_data/services.json"
+        fields:
+          - label: "Services"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - {
+                  label: "Icon SVG",
+                  name: "icon",
+                  widget: "text",
+                  hint: "Paste the inner SVG markup",
+                }
+
+      - name: "portfolio"
+        label: "Portfolio"
+        file: "src/_data/portfolio.json"
+        fields:
+          - label: "Portfolio Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string" }

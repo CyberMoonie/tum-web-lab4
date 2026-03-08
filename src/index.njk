@@ -1,0 +1,216 @@
+---
+layout: base.njk
+---
+
+{# ─── Navigation ─── #}
+<nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-semibold" href="#">{{ site.name }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{# ─── Hero Section ─── #}
+<section id="hero" class="hero d-flex align-items-center justify-content-center text-center">
+    <div class="container">
+        <p class="hero-tagline small mb-2">{{ site.tagline }}</p>
+        <h1 class="hero-title display-3 fw-light mb-3">{{ site.name }}</h1>
+        <p class="hero-subtitle lead mb-4">{{ site.subtitle }}</p>
+        <a href="#contact" class="btn btn-outline-gold btn-lg">{{ site.cta }}</a>
+    </div>
+</section>
+
+{# ─── Mobile CTA Banner ─── #}
+<section class="mobile-cta-banner d-md-none text-center py-3">
+    <div class="container">
+        <h2 class="h5 mb-2">📸 Book Your Session</h2>
+        <p class="small mb-2">Get in touch for weddings, events &amp; portraits</p>
+        <a href="#contact" class="btn btn-outline-gold btn-sm">{{ site.cta }}</a>
+    </div>
+</section>
+
+{# ─── About Section ─── #}
+<section id="about" class="about py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-4">{{ site.about.heading }}</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                {% for paragraph in site.about.paragraphs %}
+                <p class="about-text text-center">{{ paragraph | safe }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ─── Services Section ─── #}
+<section id="services" class="services py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-4">Services</h2>
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-sm-6 col-lg-3">
+                <div class="service-card text-center p-4 h-100">
+                    <div class="service-icon mb-3">
+                        {{ service.icon | safe }}
+                    </div>
+                    <h3 class="h5 mb-2">{{ service.title }}</h3>
+                    <p>{{ service.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# ─── Portfolio Section ─── #}
+<section id="portfolio" class="portfolio py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-4">Portfolio</h2>
+        <div class="row g-3">
+            {% for item in portfolio %}
+            <div class="col-6 col-md-3">
+                <div class="gallery-item overflow-hidden">
+                    <img src="{{ item.image }}" alt="{{ item.alt }}" class="img-fluid w-100">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# ─── Contact Section ─── #}
+<section id="contact" class="contact py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-4">{{ site.contact.heading }}</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <p class="contact-intro text-center mb-4">{{ site.contact.intro }}</p>
+                <form class="contact-form">
+                    <div class="row g-3 mb-3">
+                        <div class="col-sm-6">
+                            <input type="text" placeholder="Your Name" required class="form-control form-input">
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="email" placeholder="Your Email" required class="form-control form-input">
+                        </div>
+                    </div>
+                    <textarea placeholder="Tell me about your project or event..." required class="form-control form-textarea mb-3" rows="5"></textarea>
+                    <button type="submit" class="btn btn-outline-gold">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ─── Mobile Follow Section ─── #}
+<section class="mobile-follow d-md-none text-center py-4">
+    <div class="container">
+        <img src="/images/1.jpeg" alt="{{ site.name }} Photography" class="mobile-follow-img rounded-3 mb-3">
+        <h3 class="h5 mb-2">Follow My Work</h3>
+        <p class="small text-muted-custom">Stay connected and see the latest shoots, stories, and behind-the-scenes moments.</p>
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="{{ site.socials.instagram }}" class="btn btn-outline-gold btn-sm" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="{{ site.socials.facebook }}" class="btn btn-outline-gold btn-sm" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+    </div>
+</section>
+
+{# ─── Footer ─── #}
+<footer class="footer py-4">
+    <div class="container text-center">
+        <p class="footer-brand mb-2">{{ site.footer.brand }}</p>
+        <div class="footer-socials d-flex justify-content-center gap-3 mb-2">
+            <a href="{{ site.socials.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="{{ site.socials.facebook }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="{{ site.socials.tiktok }}" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.86 2.86 0 0 1 .84.13v-3.5a6.37 6.37 0 0 0-.84-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 10.86 4.48 6.3 6.3 0 0 0 1.86-4.49V8.76a8.26 8.26 0 0 0 4.84 1.56v-3.5a4.84 4.84 0 0 1-1.12-.13z"/></svg>
+            </a>
+        </div>
+        <p class="small mb-0 footer-copy">&copy; {{ site.footer.copy }}</p>
+    </div>
+</footer>
+
+{# ─── Lightbox ─── #}
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Full-size photograph">
+</div>
+
+{# ─── Mascot ─── #}
+<div class="mascot" id="mascot">
+    <div class="mascot-tooltip">Hey there! 👋<br>Let's capture your story — reach out!</div>
+    <svg class="mascot-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="cameraBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#444"/>
+                <stop offset="100%" stop-color="#222"/>
+            </linearGradient>
+            <filter id="camShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#c9a96e" flood-opacity="0.5"/>
+            </filter>
+        </defs>
+        <rect x="15" y="35" width="90" height="60" rx="12" fill="url(#cameraBody)" filter="url(#camShadow)"/>
+        <rect x="20" y="25" width="25" height="14" rx="4" fill="#333"/>
+        <rect x="26" y="28" width="12" height="8" rx="2" fill="#c9a96e" opacity="0.8"/>
+        <circle cx="60" cy="65" r="22" fill="#1a1a1a" stroke="#c9a96e" stroke-width="2"/>
+        <circle cx="60" cy="65" r="15" fill="#111"/>
+        <circle cx="60" cy="65" r="10" fill="#1a1a1a"/>
+        <ellipse cx="54" cy="59" rx="4" ry="5" fill="rgba(255,255,255,0.12)" transform="rotate(-20 54 59)"/>
+        <ellipse cx="45" cy="48" rx="5" ry="6" fill="#f5f5f5"/>
+        <ellipse cx="75" cy="48" rx="5" ry="6" fill="#f5f5f5"/>
+        <ellipse cx="46" cy="49" rx="2.5" ry="3" fill="#111"/>
+        <ellipse cx="76" cy="49" rx="2.5" ry="3" fill="#111"/>
+        <path d="M50 56 Q60 63, 70 56" stroke="#f5f5f5" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <rect x="35" y="93" width="8" height="12" rx="4" fill="#333"/>
+        <rect x="77" y="93" width="8" height="12" rx="4" fill="#333"/>
+        <ellipse cx="39" cy="106" rx="7" ry="3" fill="#222"/>
+        <ellipse cx="81" cy="106" rx="7" ry="3" fill="#222"/>
+    </svg>
+</div>
+
+{# ─── Scripts ─── #}
+<script>
+    setTimeout(function() {
+        document.getElementById('mascot').classList.add('mascot-visible');
+    }, 2000);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+
+        document.querySelectorAll('.gallery-item img').forEach(function (img) {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function () {
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                lightbox.classList.add('lightbox-open');
+            });
+        });
+
+        lightbox.addEventListener('click', function () {
+            lightbox.classList.remove('lightbox-open');
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('lightbox-open');
+            }
+        });
+    });
+</script>

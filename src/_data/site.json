@@ -1,0 +1,28 @@
+{
+  "name": "Sergiu Munteanu",
+  "title": "Sergiu Munteanu — Photography",
+  "description": "Sergiu Munteanu — Professional black & white photographer specializing in weddings, events, and fine-art portraits.",
+  "tagline": "Professional Photography",
+  "subtitle": "Capturing timeless moments in black & white",
+  "cta": "Contact Me",
+  "about": {
+    "heading": "About Me",
+    "paragraphs": [
+      "I'm <strong>Sergiu Munteanu</strong>, a photographer driven by the power of light and shadow. My work focuses on black & white imagery — stripping away color to reveal the raw emotion and timeless beauty in every frame.",
+      "From intimate wedding moments to vibrant event atmospheres, I document stories that deserve to be remembered. Every photograph I take is crafted with intention, patience, and a deep respect for the subject."
+    ]
+  },
+  "contact": {
+    "heading": "Get in Touch",
+    "intro": "Interested in working together? Send me a message and let's create something beautiful."
+  },
+  "footer": {
+    "brand": "Sergiu Munteanu Photography",
+    "copy": "2026 Sergiu Munteanu. All rights reserved."
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/munteanu.sergiu/",
+    "facebook": "https://www.facebook.com/Sergiu.Muntteanu?locale=ru_RU",
+    "tiktok": "https://www.tiktok.com/@sergiu.munteanu?lang=en"
+  }
+}
